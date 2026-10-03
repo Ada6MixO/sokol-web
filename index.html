@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJ Sokol Malhostovice | Sport, kultura a společenství v obci</title>
+    <meta name="description"
+        content="Oficiální moderní stránky TJ Sokol Malhostovice. Aktuality z tabulky, týdenní rozvrh cvičení, sportovní oddíly, robotika PECKA, pronájmy sálu a spolková chata Zubří.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sokol: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#E3000F',
+                            600: '#cb000e',
+                            700: '#a3000b',
+                            800: '#850009',
+                            900: '#540006',
+                            red: '#E3000F',
+                            darkred: '#99000A',
+                            bg: '#F8FAFC',
+                            text: '#0F172A',
+                            muted: '#475569'
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.06)',
+                        'card': '0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03)',
+                        'card-hover': '0 25px 45px -12px rgba(227, 0, 15, 0.14), 0 8px 16px -4px rgba(15, 23, 42, 0.04)',
+                        'glow': '0 0 25px -3px rgba(227, 0, 15, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-red-500 selection:text-white">
+
+    <div id="site-header-container"></div>
+
+    <section
+        class="hero-banner relative bg-slate-950 text-white overflow-hidden py-20 lg:py-28 border-b border-slate-900 hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/80"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-[1.15] mb-6">
+                    Sport, kultura a přátelství <br>
+                    <span class="hero-highlight">v sokolovně Malhostovice</span>
+                </h1>
+                <p class="hero-desc text-slate-200 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl font-normal">
+                    Pravidelná cvičení pro děti i dospělé, technické kroužky PECKA, pronájmy sálů pro rodinné oslavy a
+                    tradiční kulturní akce.
+                </p>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#aktuality"
+                        class="btn-shimmer inline-flex items-center gap-2.5 bg-gradient-to-r from-red-600 to-rose-600 text-white text-base font-bold py-3.5 px-7 rounded-full shadow-lg shadow-red-600/30 hover:scale-105 transition-all">
+                        <span>Nejnovější aktuality</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </a>
+                    <a href="kalendar.html"
+                        class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/25 text-base font-semibold py-3.5 px-6 rounded-full transition-all">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>Rozvrh cvičení</span>
+                    </a>
+                    <a href="pronajmy.html"
+                        class="inline-flex items-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 text-base font-semibold py-3.5 px-6 rounded-full transition-all">
+                        <span>Pronájem prostor</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <a href="oddily.html"
+                    class="group p-6 rounded-3xl bg-slate-50 hover:bg-red-50/60 border border-slate-200/80 hover:border-red-200 transition-all card-hover-effect flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-red-100 text-sokol-red flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display font-extrabold text-xl text-slate-900 group-hover:text-sokol-red transition-colors mb-2">
+                            Sportovní oddíly</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Pravidelná cvičení pro děti i dospělé:
+                            Zápasníček, jóga a relaxace, zdravotní cvičení žen, volejbal a taneční kroužek.</p>
+                    </div>
+                    <span class="text-sokol-red font-bold text-sm inline-flex items-center gap-1 mt-4">Prozkoumat oddíly
+                        &rarr;</span>
+                </a>
+
+                <a href="kalendar.html"
+                    class="group p-6 rounded-3xl bg-slate-50 hover:bg-red-50/60 border border-slate-200/80 hover:border-red-200 transition-all card-hover-effect flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display font-extrabold text-xl text-slate-900 group-hover:text-sokol-red transition-colors mb-2">
+                            Kalendář & Akce</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Přehledný týdenní a měsíční rozpis obsazenosti
+                            tělocvičny, stálý rozvrh oddílů i kalendář kulturních akcí.</p>
+                    </div>
+                    <span class="text-sokol-red font-bold text-sm inline-flex items-center gap-1 mt-4">Zobrazit rozvrh
+                        &rarr;</span>
+                </a>
+
+                <a href="pecka.html"
+                    class="group p-6 rounded-3xl bg-slate-50 hover:bg-indigo-50/60 border border-slate-200/80 hover:border-indigo-200 transition-all card-hover-effect flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display font-extrabold text-xl text-slate-900 group-hover:text-indigo-600 transition-colors mb-2">
+                            PECKA volný čas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Technické kroužky pro děti a mládež:
+                            programování Scratch, Arduino robotika, 3D tisk a vývoj her v Unity.</p>
+                    </div>
+                    <span class="text-indigo-600 font-bold text-sm inline-flex items-center gap-1 mt-4">Kroužky PECKA
+                        &rarr;</span>
+                </a>
+
+                <a href="pronajmy.html#zubri"
+                    class="group p-6 rounded-3xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200/80 hover:border-emerald-200 transition-all card-hover-effect flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display font-extrabold text-xl text-slate-900 group-hover:text-emerald-700 transition-colors mb-2">
+                            Chata Zubří</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Spolková chata pro až 8 osob v samoobslužném
+                            tábornickém režimu na Vysočině. Pro členy i příznivce jednoty.</p>
+                    </div>
+                    <span class="text-emerald-700 font-bold text-sm inline-flex items-center gap-1 mt-4">Podmínky a
+                        provoz &rarr;</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <main id="aktuality" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+            <div class="lg:col-span-8">
+
+                <div
+                    class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-5 border-b border-slate-200">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 text-sokol-red text-xs uppercase font-extrabold tracking-widest mb-1.5">
+                            <span class="w-2 h-2 rounded-full bg-sokol-red animate-pulse"></span>
+                            Aktuální dění
+                        </div>
+                        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">Aktuality
+                            & Oznámení</h2>
+                    </div>
+                </div>
+
+                <div id="obsah" class="w-full">
+                    <div
+                        class="flex flex-col items-center justify-center p-12 text-center bg-white rounded-3xl border border-slate-200 shadow-sm">
+                        <div class="loader mb-4"></div>
+                        <p class="font-bold text-slate-700 text-base">Načítám nejnovější zprávy ze sokolovny...</p>
+                        <p class="text-slate-500 text-sm mt-1">Chvilku strpení, připravuji aktuální data.</p>
+                    </div>
+                </div>
+
+                <div id="load-more-container" class="mt-8 text-center hidden">
+                    <button id="btn-load-more" type="button"
+                        class="btn-shimmer inline-flex items-center gap-3 bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-300 hover:border-sokol-red font-bold text-base py-3.5 px-8 rounded-full shadow-md transition-all">
+                        <svg class="w-5 h-5 text-sokol-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                        <span id="load-more-text">Načíst další příspěvky</span>
+                    </button>
+                    <p id="load-more-count" class="text-xs text-slate-500 mt-2 font-medium"></p>
+                </div>
+
+            </div>
+
+            <div class="lg:col-span-4 space-y-6">
+
+                <div
+                    class="bg-gradient-to-br from-blue-600 via-blue-600 to-indigo-600 rounded-3xl p-6 shadow-lg text-white space-y-4">
+                    <div class="flex items-center gap-3.5">
+                        <div
+                            class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm text-blue-600 p-2">
+                            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-black tracking-wider text-blue-100 uppercase block">Oficiální
+                                Facebook</span>
+                            <h3 class="text-base sm:text-lg font-display font-black text-white leading-tight">Sledujte a
+                                sdílejte naše novinky</h3>
+                        </div>
+                    </div>
+                    <p class="text-xs text-blue-100/90 font-medium leading-relaxed">
+                        Fotogalerie z akcí, pozvánky na události i rychlé zprávy ze sokolovny.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-2.5 pt-1">
+                        <a href="https://www.facebook.com/SokolMalhostovice/" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-1.5 bg-white hover:bg-slate-100 text-blue-700 font-bold text-xs px-4 py-2.5 rounded-full shadow-sm transition-all hover:scale-105">
+                            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            <span>Otevřít profil</span>
+                        </a>
+                        <button type="button"
+                            onclick="if(navigator.share){navigator.share({title:'TJ Sokol Malhostovice',url:'https://www.facebook.com/SokolMalhostovice/'})}else{window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/SokolMalhostovice/','_blank')}"
+                            class="inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 text-white border border-white/25 font-bold text-xs px-3.5 py-2.5 rounded-full transition-all">
+                            <svg class="w-3.5 h-3.5 fill-none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                            </svg>
+                            <span>Sdílet</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-display font-black text-xl text-slate-900">Pravidelná cvičení</h3>
+                        <span
+                            class="text-xs font-bold text-sokol-red bg-red-50 px-2.5 py-1 rounded-full border border-red-100">2026/27</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li
+                            class="flex items-start justify-between p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                            <div>
+                                <strong class="text-slate-900 block font-bold">Zápasníček (děti)</strong>
+                                <span class="text-xs text-slate-500">Úterý 17:30 – 19:00</span>
+                            </div>
+                            <span class="text-xs font-bold text-red-600">Pavel Leksa</span>
+                        </li>
+                        <li
+                            class="flex items-start justify-between p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                            <div>
+                                <strong class="text-slate-900 block font-bold">Zdravotní cvičení žen</strong>
+                                <span class="text-xs text-slate-500">Po, St, Pá 19:00 – 20:00</span>
+                            </div>
+                            <span class="text-xs font-bold text-rose-600">Sál</span>
+                        </li>
+                        <li
+                            class="flex items-start justify-between p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                            <div>
+                                <strong class="text-slate-900 block font-bold">Jóga a relaxace</strong>
+                                <span class="text-xs text-slate-500">Čtvrtek 19:00 – 20:00</span>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-600">Přísálí</span>
+                        </li>
+                        <li
+                            class="flex items-start justify-between p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                            <div>
+                                <strong class="text-slate-900 block font-bold">Volejbal pro všechny</strong>
+                                <span class="text-xs text-slate-500">St 17:30 / Pá 20:00</span>
+                            </div>
+                            <span class="text-xs font-bold text-blue-600">Sál</span>
+                        </li>
+                    </ul>
+                    <a href="kalendar.html"
+                        class="mt-4 inline-flex items-center justify-center w-full py-2.5 rounded-xl bg-slate-900 hover:bg-sokol-red text-white text-xs font-bold transition-colors">
+                        Zobrazit kompletní rozvrh &rarr;
+                    </a>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card">
+                    <h3 class="font-display font-black text-xl text-slate-900 mb-3">Vedení jednoty</h3>
+                    <div class="space-y-3 text-sm text-slate-700">
+                        <div>
+                            <span class="text-xs text-slate-500 block">Předsedkyně výboru:</span>
+                            <span class="font-bold text-slate-900 block">Ing. Martina Odehnalová</span>
+                            <a href="tel:+420723499116" class="text-sokol-red font-bold text-sm hover:underline">+420
+                                723 499 116</a>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100">
+                            <span class="text-xs text-slate-500 block">Hospodář & správce:</span>
+                            <span class="font-bold text-slate-900 block">Ing. František Odehnal</span>
+                            <a href="tel:+420724558282" class="text-sokol-red font-bold text-sm hover:underline">+420
+                                724 558 282</a>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100">
+                            <span class="text-xs text-slate-500 block">Pokladník jednoty:</span>
+                            <span class="font-bold text-slate-900 block">Alena Uherková</span>
+                            <span class="text-xs text-slate-500">Členské příspěvky a platby</span>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100">
+                            <span class="text-xs text-slate-500 block">Oficiální e-mail:</span>
+                            <a href="mailto:info@sokol-malhostovice.cz"
+                                class="text-slate-900 font-bold hover:underline">info@sokol-malhostovice.cz</a>
+                        </div>
+                    </div>
+                    <a href="kontakt.html"
+                        class="mt-4 inline-flex items-center justify-center w-full py-2.5 rounded-xl border border-slate-300 hover:border-slate-800 text-slate-800 text-xs font-bold transition-colors">
+                        Všechny kontakty & mapa &rarr;
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <dialog id="image-preview" aria-label="Náhled plakátu">
+        <button id="image-preview-close" type="button" aria-label="Zavřít náhled">&times;</button>
+        <img alt="Plakát v plném rozlišení">
+    </dialog>
+
+    <div id="site-footer-container"></div>
+
+    <script src="site-common.js"></script>
+
+    <script>
+        const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSrQ0xvES4_G1zRfqN_XaNvONz9i4eOXb2K6vkcW_Qk0i5ibkYlLu63AYnVIDDcIWnOEnM4q2X0JR84/pub?output=csv';
+
+        let nacteneRadkyGlobal = [];
+        let aktualniPocetZobrazenych = 0;
+        const POCET_NA_DAVKU = 5;
+
+        function zpracujCSV(text) {
+            const radky = [];
+            let radek = [];
+            let hodnota = '';
+            let vUvozovkach = false;
+
+            for (let i = 0; i < text.length; i++) {
+                const znak = text[i];
+                if (znak === '"') {
+                    if (vUvozovkach && text[i + 1] === '"') { hodnota += '"'; i++; }
+                    else { vUvozovkach = !vUvozovkach; }
+                } else if (znak === ',' && !vUvozovkach) {
+                    radek.push(hodnota); hodnota = '';
+                } else if (znak === '\n' && !vUvozovkach) {
+                    radek.push(hodnota); radky.push(radek); radek = []; hodnota = '';
+                } else if (znak !== '\r') {
+                    hodnota += znak;
+                }
+            }
+            radek.push(hodnota); radky.push(radek);
+            return radky;
+        }
+
+        function vytvorKartuPrispevku(nadpis, cas, text, imageId) {
+            const article = document.createElement('article');
+            article.className = 'glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card mb-8 group w-full bg-white hover:border-red-200/80 transition-all';
+
+            let htmlObsah = '';
+            htmlObsah += `<div class="h-1.5 w-full bg-gradient-to-r from-red-600 via-rose-500 to-amber-500"></div>`;
+
+            htmlObsah += `<div class="p-6 sm:p-8">`;
+            htmlObsah += `
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+                <h3 class="font-display font-black text-2xl sm:text-3xl text-slate-900 group-hover:text-sokol-red transition-colors leading-snug">
+                    ${nadpis || 'Oznámení ze sokolovny'}
+                </h3>
+                <div class="shrink-0 sm:text-right sm:pt-1">
+                    <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200/80 px-3.5 py-1.5 rounded-full border border-slate-200/90 whitespace-nowrap shadow-2xs transition-colors">
+                        <svg class="w-4 h-4 text-sokol-red shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        ${cas || 'Právě zveřejněno'}
+                    </span>
+                </div>
+            </div>
+            `;
+
+            if (text && text.trim() !== '') {
+                htmlObsah += `<p class="text-slate-700 text-base sm:text-lg leading-relaxed whitespace-pre-wrap font-normal">${text}</p>`;
+            }
+
+            htmlObsah += `</div>`;
+
+            if (imageId) {
+                const obrazekAdresa = `https://drive.google.com/thumbnail?id=${imageId}&sz=w1200`;
+                htmlObsah += `
+                <div class="px-6 pb-6 sm:px-8 sm:pb-8 flex justify-center">
+                    <button type="button" data-image-preview class="relative group/img overflow-hidden rounded-2xl cursor-zoom-in block max-w-full" aria-label="Zvětšit obrázek plakátu: ${nadpis || 'příspěvek'}">
+                        <img src="${obrazekAdresa}" alt="${nadpis || 'Plakát'}" class="max-h-[550px] w-auto max-w-full rounded-2xl border border-slate-200 shadow-xs object-contain block transition-transform duration-300 group-hover/img:scale-[1.01]" loading="lazy">
+                        <div class="absolute inset-0 bg-slate-950/25 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center rounded-2xl">
+                            <span class="inline-flex items-center gap-2 bg-white/95 text-slate-900 font-bold text-sm px-5 py-2.5 rounded-full shadow-xl backdrop-blur-sm">
+                                <svg class="w-4 h-4 text-sokol-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                                Zvětšit plakát na celou obrazovku
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            `;
+            }
+
+            article.innerHTML = htmlObsah;
+            return article;
+        }
+
+        function zobrazDalsiDavku() {
+            const kontejner = document.getElementById('obsah');
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const loadMoreCount = document.getElementById('load-more-count');
+
+            const odIdx = aktualniPocetZobrazenych;
+            const doIdx = Math.min(odIdx + POCET_NA_DAVKU, nacteneRadkyGlobal.length);
+
+            for (let i = odIdx; i < doIdx; i++) {
+                const radek = nacteneRadkyGlobal[i];
+                const casoveRazitko = radek[0];
+                const nadpis = radek[2];
+                const textPrispevku = radek[3];
+                const odkazGoogleDisk = radek[4];
+
+                let imageId = null;
+                if (odkazGoogleDisk && odkazGoogleDisk.includes('id=')) {
+                    const idMatch = odkazGoogleDisk.match(/id=([^&]+)/);
+                    if (idMatch && idMatch[1]) imageId = idMatch[1].trim();
+                }
+
+                kontejner.appendChild(vytvorKartuPrispevku(nadpis, casoveRazitko, textPrispevku, imageId));
+            }
+
+            aktualniPocetZobrazenych = doIdx;
+
+            if (aktualniPocetZobrazenych < nacteneRadkyGlobal.length) {
+                loadMoreContainer.classList.remove('hidden');
+                const zbyva = nacteneRadkyGlobal.length - aktualniPocetZobrazenych;
+                loadMoreCount.textContent = `Zobrazeno ${aktualniPocetZobrazenych} z celkem ${nacteneRadkyGlobal.length} příspěvků (zbývá ${zbyva})`;
+            } else {
+                loadMoreContainer.classList.add('hidden');
+            }
+        }
+
+        async function nactiPrispevky() {
+            const kontejner = document.getElementById('obsah');
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Chyba načítání dat');
+
+                const data = await response.text();
+                const radky = zpracujCSV(data);
+                radky.shift();
+
+                kontejner.innerHTML = '';
+
+                const platneRadky = radky.filter(r => r.length >= 2 && r[0].trim() !== '');
+
+                if (platneRadky.length === 0) {
+                    kontejner.innerHTML = `
+                    <div class="glass-card rounded-3xl p-12 text-center w-full border border-dashed border-slate-300">
+                        <p class="text-slate-600 font-bold text-lg">Zatím zde nejsou žádné nové příspěvky.</p>
+                    </div>`;
+                    return;
+                }
+
+                nacteneRadkyGlobal = platneRadky.reverse();
+                aktualniPocetZobrazenych = 0;
+
+                zobrazDalsiDavku();
+
+            } catch (error) {
+                console.error('Chyba stahování z tabulky:', error);
+                kontejner.innerHTML = '';
+
+                kontejner.appendChild(vytvorKartuPrispevku(
+                    'Nábor do oddílu Zápasníček pro školní rok 2026/27',
+                    'Září 2026',
+                    'TJ Sokol Malhostovice zve všechny děti na pravidelné tréninky oddílu Zápasníček. Cvičíme každé úterý od 17:30 do 19:00 v sále sokolovny. Sportovní průprava, obratnost a zábavné hry pod vedením zkušeného trenéra Pavla Leksy.\n\nTěšíme se na všechny malé sportovce!',
+                    null
+                ));
+                kontejner.appendChild(vytvorKartuPrispevku(
+                    'Zahájení lekcí Jógy a Zdravotního cvičení pro ženy',
+                    'Září 2026',
+                    'Všechny ženy i muži jsou srdečně zváni na pravidelné lekce Jógy (čtvrtek 19:00–20:00) a Zdravotního cvičení (pondělí, středa, pátek 19:00–20:00). Protáhněte si tělo a udělejte něco pro své zdraví v příjemném kolektivu sokolovny.',
+                    null
+                ));
+            }
+        }
+
+        document.getElementById('btn-load-more')?.addEventListener('click', zobrazDalsiDavku);
+
+        const imagePreview = document.getElementById('image-preview');
+        const imagePreviewImage = imagePreview.querySelector('img');
+        let previousBodyOverflow = '';
+
+        document.getElementById('obsah').addEventListener('click', event => {
+            const trigger = event.target.closest('[data-image-preview]');
+            if (!trigger) return;
+
+            const image = trigger.querySelector('img');
+            imagePreviewImage.src = image.src;
+            imagePreviewImage.alt = image.alt;
+            previousBodyOverflow = document.body.style.overflow;
+            document.body.style.overflow = 'hidden';
+            imagePreview.showModal();
+        });
+
+        imagePreview.addEventListener('close', () => {
+            document.body.style.overflow = previousBodyOverflow;
+        });
+        document.getElementById('image-preview-close').addEventListener('click', () => imagePreview.close());
+        imagePreview.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                imagePreview.close();
+            }
+        });
+        imagePreview.addEventListener('click', event => {
+            if (event.target === imagePreview) imagePreview.close();
+        });
+
+        window.addEventListener('DOMContentLoaded', nactiPrispevky);
+    </script>
+</body>
+
+</html>

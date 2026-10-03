@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oddíly & Kroužky | TJ Sokol Malhostovice</title>
+    <meta name="description"
+        content="Sportovní oddíly pro děti i dospělé v sokolovně Malhostovice: Zápasníček, Jóga, Zdravotní cvičení pro ženy, Volejbal pro všechny a Taneční kroužek.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sokol: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#E3000F',
+                            600: '#cb000e',
+                            700: '#a3000b',
+                            800: '#850009',
+                            900: '#540006',
+                            red: '#E3000F',
+                            darkred: '#99000A',
+                            bg: '#F8FAFC',
+                            text: '#0F172A',
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03)',
+                        'card-hover': '0 25px 45px -12px rgba(227, 0, 15, 0.14), 0 8px 16px -4px rgba(15, 23, 42, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-red-500 selection:text-white">
+
+    <div id="site-header-container"></div>
+
+    <div
+        class="hero-banner relative bg-slate-950 text-white overflow-hidden py-20 lg:py-24 border-b border-slate-900 hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/80"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight mb-5">
+                    Pohyb pro radost, zdraví <br>
+                    <span class="hero-highlight">a všestranný rozvoj</span>
+                </h1>
+                <p class="hero-desc text-slate-200 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+                    Od nejmenších dětí přes mládež až po dospělé a seniory. Přijďte si vyzkoušet cvičení v prostředí
+                    naší sokolovny v Malhostovicích.
+                </p>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#prihlaska"
+                        class="btn-shimmer inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold py-3.5 px-7 rounded-full shadow-lg shadow-red-600/30 hover:scale-105 transition-all text-sm">
+                        Jak se přihlásit &darr;
+                    </a>
+                    <a href="kalendar.html#tydenni-rozvrh"
+                        class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/25 font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Týdenní rozvrh cvičení
+                    </a>
+                    <a href="pecka.html"
+                        class="inline-flex items-center gap-2 bg-indigo-600/80 hover:bg-indigo-600 text-white font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Technické kroužky PECKA &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow space-y-16">
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-2">Nabídka cvičení v
+                sokolovně</span>
+            <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">Pravidelné sportovní
+                oddíly</h2>
+            <p class="text-slate-600 text-base mt-2">Všechna cvičení probíhají v prostorách sokolovny Malhostovice pod
+                vedením zkušených cvičitelů a trenérů.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            <section id="zapasnicek"
+                class="oddil-card glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white scroll-mt-28">
+                <div>
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-red-600 via-rose-600 to-red-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                        <div class="flex items-center justify-between relative z-10">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20">
+                                Děti od 4 do 12 let
+                            </span>
+                            <span class="text-xs text-red-100 font-semibold flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Úterý 17:30 – 19:00
+                            </span>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="text-xs font-semibold text-red-200 block mb-1">Všestranná sportovní
+                                příprava</span>
+                            <h3 class="font-display font-black text-2xl sm:text-3xl text-white">Zápasníček</h3>
+                        </div>
+                    </div>
+                    <div class="p-7 space-y-4">
+                        <p class="text-slate-700 text-base leading-relaxed">
+                            Cvičení je zaměřeno na základní pohybové dovednosti dětí: obratnost, koordinaci,
+                            gymnastickou průpravu, pádovou techniku a úpolové hry pod odborným dohledem. Děti se učí
+                            zdravému soutěžení, sebedůvěře a týmové spolupráci.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm">
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kdy cvičíme:</span>
+                                <strong class="text-slate-900 font-bold block">Každé úterý 17:30 – 19:00</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kde:</span>
+                                <strong class="text-slate-900 font-bold block">Sál sokolovny Malhostovice</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Trenér oddílu:</span>
+                                <strong class="text-slate-900 font-bold block">Pavel Leksa (<a href="tel:+420732820337"
+                                        class="text-sokol-red hover:underline">+420 732 820 337</a>)</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Členský příspěvek:</span>
+                                <strong class="text-sokol-red font-bold block" data-sokol-prispevek="zapasnicek">600 Kč
+                                    / rok</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-7 pt-0">
+                    <a href="#prihlaska"
+                        class="inline-flex items-center justify-center w-full bg-slate-900 hover:bg-sokol-red text-white font-bold py-3.5 px-6 rounded-2xl text-sm transition-colors shadow-sm">
+                        Informace k přihlášení do oddílu &darr;
+                    </a>
+                </div>
+            </section>
+
+            <section id="joga"
+                class="oddil-card glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white scroll-mt-28">
+                <div>
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                        <div class="flex items-center justify-between relative z-10">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20">
+                                Dospělí & Mládež
+                            </span>
+                            <span class="text-xs text-emerald-100 font-semibold flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Čtvrtek 19:00 – 20:00
+                            </span>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="text-xs font-semibold text-emerald-200 block mb-1">Harmonie těla a mysli</span>
+                            <h3 class="font-display font-black text-2xl sm:text-3xl text-white">Jóga a relaxace</h3>
+                        </div>
+                    </div>
+                    <div class="p-7 space-y-4">
+                        <p class="text-slate-700 text-base leading-relaxed">
+                            Lekce zaměřené na uvolnění svalového a psychického napětí, flexibilitu celého těla, vědomé
+                            dýchání a zpevnění hlubokého stabilizačního systému. Cvičí se v klidném prostředí přísálí
+                            sokolovny.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm">
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kdy cvičíme:</span>
+                                <strong class="text-slate-900 font-bold block">Každý čtvrtek 19:00 – 20:00</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kde:</span>
+                                <strong class="text-slate-900 font-bold block">Přísálí sokolovny (vlastní
+                                    podložku)</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Vedoucí oddílu:</span>
+                                <strong class="text-slate-900 font-bold block">Nina Odehnalová & Alena Uherková</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Příspěvek na lekci:</span>
+                                <strong class="text-emerald-700 font-bold block" data-sokol-prispevek="jogaLekce">110 Kč
+                                    / hod</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-7 pt-0">
+                    <a href="#prihlaska"
+                        class="inline-flex items-center justify-center w-full bg-slate-900 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-2xl text-sm transition-colors shadow-sm">
+                        Informace k přihlášení do oddílu &darr;
+                    </a>
+                </div>
+            </section>
+
+            <section id="zdravotni-cviceni"
+                class="oddil-card glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white scroll-mt-28">
+                <div>
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-rose-600 via-pink-600 to-rose-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                        <div class="flex items-center justify-between relative z-10">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20">
+                                Dospělé ženy & Seniorky
+                            </span>
+                            <span class="text-xs text-rose-100 font-semibold flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Po, St, Pá 19:00 – 20:00
+                            </span>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="text-xs font-semibold text-rose-200 block mb-1">Kondice a zdravá záda</span>
+                            <h3 class="font-display font-black text-2xl sm:text-3xl text-white">Zdravotní cvičení pro
+                                ženy</h3>
+                        </div>
+                    </div>
+                    <div class="p-7 space-y-4">
+                        <p class="text-slate-700 text-base leading-relaxed">
+                            Oblíbené kondiční protažení a cvičení zaměřené na prevenci bolestí zad, zpevnění svalů a
+                            udržení dobré nálady i vitality. Cvičí se v přátelské atmosféře třikrát týdně v sále
+                            sokolovny.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm">
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kdy cvičíme:</span>
+                                <strong class="text-slate-900 font-bold block">Po, St a Pá 19:00 – 20:00</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kde:</span>
+                                <strong class="text-slate-900 font-bold block">Sál sokolovny Malhostovice</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Vedoucí oddílu:</span>
+                                <strong class="text-slate-900 font-bold block">Marie Baláková (<a
+                                        href="tel:+420723499116" class="text-sokol-red hover:underline">+420 723 499
+                                        116</a>)</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Příspěvek na lekci:</span>
+                                <strong class="text-rose-700 font-bold block"
+                                    data-sokol-prispevek="zdravotniCviceni">110 Kč / hod</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-7 pt-0">
+                    <a href="#prihlaska"
+                        class="inline-flex items-center justify-center w-full bg-slate-900 hover:bg-rose-600 text-white font-bold py-3.5 px-6 rounded-2xl text-sm transition-colors shadow-sm">
+                        Informace k přihlášení do oddílu &darr;
+                    </a>
+                </div>
+            </section>
+
+            <section id="volejbal"
+                class="oddil-card glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white scroll-mt-28">
+                <div>
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                        <div class="flex items-center justify-between relative z-10">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20">
+                                Mládež & Dospělí
+                            </span>
+                            <span class="text-xs text-blue-100 font-semibold flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Středa & Pátek
+                            </span>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="text-xs font-semibold text-blue-200 block mb-1">Týmový míčový sport</span>
+                            <h3 class="font-display font-black text-2xl sm:text-3xl text-white">Volejbal pro všechny
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="p-7 space-y-4">
+                        <p class="text-slate-700 text-base leading-relaxed">
+                            Tréninky a přátelská utkání ve velkém sále sokolovny. Volejbal je rozdělen do dvou skupin
+                            podle pokročilosti: Středa 17:30–19:00 pro velmi pokročilé a Pátek 20:00–22:00 pro mírně
+                            pokročilé hráče.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm">
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kdy cvičíme:</span>
+                                <strong class="text-slate-900 font-bold block">St 17:30 / Pá 20:00</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kde:</span>
+                                <strong class="text-slate-900 font-bold block">Velký sál sokolovny</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Vedoucí oddílu:</span>
+                                <strong class="text-slate-900 font-bold block">Lenka Chvátalová (<a
+                                        href="tel:+420604619566" class="text-sokol-red hover:underline">+420 604 619
+                                        566</a>)</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Příspěvek na hru:</span>
+                                <strong class="text-blue-700 font-bold block" data-sokol-prispevek="volejbal">110 Kč /
+                                    hod</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-7 pt-0">
+                    <a href="#prihlaska"
+                        class="inline-flex items-center justify-center w-full bg-slate-900 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-2xl text-sm transition-colors shadow-sm">
+                        Informace k přihlášení do oddílu &darr;
+                    </a>
+                </div>
+            </section>
+
+            <section id="tanecni-krouzek"
+                class="oddil-card glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white scroll-mt-28">
+                <div>
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-purple-600 via-fuchsia-600 to-purple-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                        <div class="flex items-center justify-between relative z-10">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20">
+                                Děti 5 až 14 let
+                            </span>
+                            <span class="text-xs text-purple-100 font-semibold flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Každé pondělí
+                            </span>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="text-xs font-semibold text-purple-200 block mb-1">Tradice, rytmus a
+                                folklor</span>
+                            <h3 class="font-display font-black text-2xl sm:text-3xl text-white">Taneční kroužek</h3>
+                        </div>
+                    </div>
+                    <div class="p-7 space-y-4">
+                        <p class="text-slate-700 text-base leading-relaxed">
+                            Výuka tanečních základů, lidových tanců a rytmiky. Děti se připravují na tradiční
+                            malhostovické krojované hody v srpnu. Skupiny: Malé děti (5–10 let) v 16:00–17:00 a Velké
+                            děti (10–14 let) v 18:00–19:00.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm">
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kdy cvičíme:</span>
+                                <strong class="text-slate-900 font-bold block">Pondělí 16:00 & 18:00</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Kde:</span>
+                                <strong class="text-slate-900 font-bold block">Sál sokolovny</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Vedoucí oddílu:</span>
+                                <strong class="text-slate-900 font-bold block">Vedení jednoty Sokola</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                                <span class="text-slate-500 block text-xs font-medium">Příspěvek na kroužek:</span>
+                                <strong class="text-purple-700 font-bold block"
+                                    data-sokol-prispevek="tanecniKrouzek">500 Kč / rok</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-7 pt-0">
+                    <a href="#prihlaska"
+                        class="inline-flex items-center justify-center w-full bg-slate-900 hover:bg-purple-700 text-white font-bold py-3.5 px-6 rounded-2xl text-sm transition-colors shadow-sm">
+                        Informace k přihlášení do oddílu &darr;
+                    </a>
+                </div>
+            </section>
+
+            <section id="pecka-banner"
+                class="oddil-card glass-card rounded-3xl p-8 card-hover-effect border border-indigo-200 shadow-card flex flex-col justify-between bg-gradient-to-br from-indigo-50/70 to-white relative overflow-hidden">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center mb-6 shadow-md shadow-indigo-500/25">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div>
+                    <span
+                        class="text-xs font-extrabold uppercase tracking-widest text-indigo-700 block mb-1">Technologický
+                        klub sokolovny</span>
+                    <h3 class="font-display font-black text-2xl sm:text-3xl text-slate-900 mb-3">PECKA volný čas</h3>
+                    <p class="text-slate-700 text-base leading-relaxed mb-6">
+                        Zajímáte se o kroužky robotiky, programování nebo 3D tisku? Všechny technické kurzy (Arduino,
+                        Scratch, 3D modelování a tisk, Unity 3D) najdete na samostatné stránce PECKA.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-bold text-indigo-800 mb-6">
+                        <span class="bg-indigo-100/80 px-3 py-1.5 rounded-full">Arduino robotika</span>
+                        <span class="bg-indigo-100/80 px-3 py-1.5 rounded-full">Hrátky se Scratchem</span>
+                        <span class="bg-indigo-100/80 px-3 py-1.5 rounded-full">3D modelování & tisk</span>
+                        <span class="bg-indigo-100/80 px-3 py-1.5 rounded-full">Poznáváme UNITY</span>
+                    </div>
+                </div>
+                <a href="pecka.html"
+                    class="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-6 rounded-2xl text-sm transition-colors shadow-md">
+                    Otevřít nabídku PECKA volný čas &rarr;
+                </a>
+            </section>
+
+        </div>
+
+        <section id="prihlaska"
+            class="bg-gradient-to-b from-slate-100 to-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-2">Přihlášení do
+                    oddílů</span>
+                <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight mb-3">
+                    Jak se přihlásit do oddílu
+                </h2>
+                <p class="text-slate-600 text-base leading-relaxed">
+                    Elektronické přihlašování prostřednictvím on-line formuláře aktuálně není možné.
+                </p>
+            </div>
+
+            <div
+                class="glass-card rounded-3xl p-8 sm:p-10 shadow-card border border-slate-200/90 bg-white max-w-3xl mx-auto text-center space-y-6">
+                <div class="w-16 h-16 rounded-full bg-red-50 text-sokol-red flex items-center justify-center mx-auto">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                </div>
+                <div class="space-y-2 max-w-xl mx-auto">
+                    <h3 class="font-display font-bold text-2xl text-slate-900">Kontaktujte prosím přímo vedoucího daného
+                        oddílu</h3>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Pro přihlášení do oddílu nebo pro účast na první zkušební lekci kontaktujte přímo vedoucího
+                        příslušného sportovního oddílu. Telefonní kontakty a časy tréninků jsou uvedeny výše u
+                        jednotlivých karet oddílů.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-center gap-3">
+                    <a href="#zapasnicek"
+                        class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold transition-colors">Zápasníček</a>
+                    <a href="#joga"
+                        class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold transition-colors">Jóga</a>
+                    <a href="#zdravotni-cviceni"
+                        class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold transition-colors">Zdravotní
+                        cvičení</a>
+                    <a href="#volejbal"
+                        class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold transition-colors">Volejbal</a>
+                    <a href="#tanecni-krouzek"
+                        class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold transition-colors">Taneční
+                        kroužek</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer-container"></div>
+
+    <script src="site-common.js"></script>
+</body>
+
+</html>

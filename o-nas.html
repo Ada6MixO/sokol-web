@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nás & Vedení jednoty | TJ Sokol Malhostovice</title>
+    <meta name="description" content="Historie a současnost tělocvičné jednoty Sokol Malhostovice (založeno 1920). Seznam členů výkonného výboru a kontrolní komise jednoty.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sokol: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#E3000F',
+                            600: '#cb000e',
+                            700: '#a3000b',
+                            800: '#850009',
+                            900: '#540006',
+                            red: '#E3000F',
+                            darkred: '#99000A',
+                            bg: '#F8FAFC',
+                            text: '#0F172A',
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03)',
+                        'card-hover': '0 25px 45px -12px rgba(227, 0, 15, 0.14), 0 8px 16px -4px rgba(15, 23, 42, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-red-500 selection:text-white">
+
+    <div id="site-header-container"></div>
+
+    <div class="relative bg-slate-950 text-white overflow-hidden py-20 lg:py-24 border-b border-slate-900 hero-banner hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/80"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black leading-tight mb-5 text-white">
+                    O naší jednotě <br>
+                    <span class="hero-highlight">TJ Sokol Malhostovice</span>
+                </h1>
+                <p class="hero-desc text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+                    Již více než jedno století rozvíjíme sportovního ducha, kulturní dědictví a sousedskou sounáležitost v Malhostovicích. Seznamte se s naším vedením a historií.
+                </p>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#vedeni" class="btn-shimmer inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold py-3.5 px-7 rounded-full shadow-lg shadow-red-600/30 hover:scale-105 transition-all text-sm">
+                        Výkonný výbor jednoty &darr;
+                    </a>
+                    <a href="#historie" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/25 font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Historie od roku 1920 &darr;
+                    </a>
+                    <a href="pro-cleny.html" class="inline-flex items-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Sekce Pro členy (Příspěvky & GDPR) &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow space-y-20">
+
+        <section id="historie" class="scroll-mt-28">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block">100+ let naší cesty</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
+                        Spolková tradice od roku 1920 až po současnost
+                    </h2>
+                    <p class="text-slate-700 text-base sm:text-lg leading-relaxed">
+                        Tělocvičná jednota Sokol Malhostovice vznikla v roce 1920 jako spolek občanů se zájmem o všestranný tělesný i duševní rozvoj. Během desítek let naši předci vybudovali budovu sokolovny, která slouží pro sportovní, kulturní i společenská setkání v obci.
+                    </p>
+                    <p class="text-slate-700 text-base sm:text-lg leading-relaxed">
+                        Dnes navazujeme na tyto sokolské ideály moderní formou: nabízíme sportovní kroužky pro nejmenší děti, mládež, dospělé i seniory, klub PECKA a pečujeme o spolkové zázemí i chatu Zubří.
+                    </p>
+                    <div class="p-6 rounded-3xl bg-red-50 border-l-4 border-sokol-red text-sm sm:text-base text-slate-800 italic">
+                        „Ve zdravém těle zdravý duch – Tužme se!“ Sokol spojuje tradici, úctu ke kořenům a radost z pohybu pro všechny generace.
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card bg-white">
+                        <div class="font-display font-black text-4xl text-sokol-red mb-1">1920</div>
+                        <h4 class="font-bold text-slate-900 text-lg mb-1">Založení jednoty v Malhostovicích</h4>
+                        <p class="text-sm text-slate-600">První cvičení, spolková vystoupení a založení dlouholetých tradic v obci.</p>
+                    </div>
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card bg-white">
+                        <div class="font-display font-black text-2xl text-slate-900 mb-1">Místní spolek</div>
+                        <h4 class="font-bold text-slate-900 text-lg mb-1">Nezávislá tělocvičná jednota</h4>
+                        <p class="text-sm text-slate-600">Fungujeme jako samostatný zapsaný spolek občanů a sportovců v Malhostovicích.</p>
+                    </div>
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card bg-white">
+                        <div class="font-display font-black text-3xl text-emerald-700 mb-1">Současnost</div>
+                        <h4 class="font-bold text-slate-900 text-lg mb-1">Zázemí pro sport i setkávání</h4>
+                        <p class="text-sm text-slate-600">Sál sokolovny, přísálí, posilovna, pravidelné oddíly pro všechny věkové skupiny a chata Zubří.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vedeni" class="scroll-mt-28">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-1">Oficiální vedení</span>
+                <h3 class="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">Výkonný výbor TJ Sokol Malhostovice</h3>
+                <p class="text-slate-600 text-base mt-2">Zvolení zástupci pečující o každodenní chod jednoty, majetek a sportovní činnost.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card card-hover-effect bg-white">
+                    <span class="text-xs font-bold uppercase tracking-wider text-sokol-red block mb-1">Statutární zástupce</span>
+                    <h4 class="font-display font-black text-2xl text-slate-900">Ing. Martina Odehnalová</h4>
+                    <p class="text-sm font-semibold text-slate-600 mb-3">Předsedkyně jednoty</p>
+                    <a href="tel:+420723499116" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-sokol-red transition-colors">
+                        <svg class="w-4 h-4 text-sokol-red" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        +420 723 499 116
+                    </a>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card card-hover-effect bg-white">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Místopředseda</span>
+                    <h4 class="font-display font-black text-2xl text-slate-900">Pavel Leksa</h4>
+                    <p class="text-sm font-semibold text-slate-600 mb-3">Místopředseda & vedoucí Zápasníčka</p>
+                    <a href="tel:+420732820337" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-sokol-red transition-colors">
+                        <svg class="w-4 h-4 text-sokol-red" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        +420 732 820 337
+                    </a>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card card-hover-effect bg-white">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Hospodář & Chata Zubří</span>
+                    <h4 class="font-display font-black text-2xl text-slate-900">Ing. František Odehnal</h4>
+                    <p class="text-sm font-semibold text-slate-600 mb-3">Hospodář & správce majetku</p>
+                    <a href="tel:+420724558282" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-sokol-red transition-colors">
+                        <svg class="w-4 h-4 text-sokol-red" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        +420 724 558 282
+                    </a>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card card-hover-effect bg-white">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Finanční agenda</span>
+                    <h4 class="font-display font-black text-2xl text-slate-900">Alena Uherková</h4>
+                    <p class="text-sm font-semibold text-slate-600 mb-1">Pokladník jednoty</p>
+                    <span class="text-xs text-slate-500">Evidence příspěvků a plateb</span>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card card-hover-effect bg-white">
+                    <span class="text-xs font-bold uppercase tracking-wider text-rose-600 block mb-1">Zdravotní cvičení</span>
+                    <h4 class="font-display font-black text-2xl text-slate-900">Marie Odehnalová</h4>
+                    <p class="text-sm font-semibold text-slate-600 mb-3">Vedoucí cvičení žen</p>
+                    <a href="tel:+420723409423" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-sokol-red transition-colors">
+                        <svg class="w-4 h-4 text-sokol-red" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        +420 723 409 423
+                    </a>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card card-hover-effect bg-white">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Sportovní činnost</span>
+                    <h4 class="font-display font-black text-2xl text-slate-900">David Foral</h4>
+                    <p class="text-sm font-semibold text-slate-600 mb-3">Vedoucí cvičení</p>
+                    <a href="tel:+420605280008" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-sokol-red transition-colors">
+                        <svg class="w-4 h-4 text-sokol-red" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        +420 605 280 008
+                    </a>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card card-hover-effect bg-white">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Cvičitelka</span>
+                    <h4 class="font-display font-black text-2xl text-slate-900">Marie Baláková</h4>
+                    <p class="text-sm font-semibold text-slate-600 mb-1">Vedoucí cvičení</p>
+                    <span class="text-xs text-slate-500">Cvičitelka oddílů jednoty</span>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-card card-hover-effect bg-white">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Cvičitelka</span>
+                    <h4 class="font-display font-black text-2xl text-slate-900">Alena Uherková</h4>
+                    <p class="text-sm font-semibold text-slate-600 mb-1">Vedoucí cvičení</p>
+                    <span class="text-xs text-slate-500">Cvičitelka oddílů jednoty</span>
+                </div>
+
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-card bg-white">
+                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
+                    <div class="w-10 h-10 rounded-2xl bg-slate-100 flex items-center justify-center font-bold text-slate-700">
+                        KK
+                    </div>
+                    <div>
+                        <h4 class="font-display font-black text-2xl text-slate-900">Kontrolní komise TJ Sokol Malhostovice</h4>
+                        <span class="text-xs text-slate-500">Nezávislý kontrolní orgán dohlížející na hospodaření jednoty</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <span class="text-xs font-bold text-slate-500 uppercase block mb-1">Předseda:</span>
+                        <strong class="font-display font-extrabold text-lg text-slate-900 block">Ing. František Odehnal</strong>
+                        <span class="text-xs text-slate-500">Předseda kontrolní komise</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <span class="text-xs font-bold text-slate-500 uppercase block mb-1">Člen:</span>
+                        <strong class="font-display font-extrabold text-lg text-slate-900 block">Jaroslav Podborský</strong>
+                        <span class="text-xs text-slate-500">Člen kontrolní komise</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <span class="text-xs font-bold text-slate-500 uppercase block mb-1">Členka:</span>
+                        <strong class="font-display font-extrabold text-lg text-slate-900 block">Bc. Šárka Odehnalová</strong>
+                        <span class="text-xs text-slate-500">Členka kontrolní komise</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer-container"></div>
+
+    <script src="site-common.js"></script>
+</body>
+</html>

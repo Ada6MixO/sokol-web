@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PECKA volný čas | Robotika, Scratch, Unity & 3D tisk v sokolovně</title>
+    <meta name="description" content="Zastřešující stránka technických kroužků v sokolovně Malhostovice. Rozklikávací moduly: Arduino robotika, Hrátky se Scratchem, Poznáváme UNITY a 3D tisk.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sokol: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#E3000F',
+                            600: '#cb000e',
+                            700: '#a3000b',
+                            800: '#850009',
+                            900: '#540006',
+                            red: '#E3000F',
+                            darkred: '#99000A',
+                            bg: '#F8FAFC',
+                            text: '#0F172A',
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03)',
+                        'card-hover': '0 25px 45px -12px rgba(99, 102, 241, 0.16), 0 8px 16px -4px rgba(15, 23, 42, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-indigo-500 selection:text-white">
+
+    <div id="site-header-container"></div>
+
+    <div class="hero-banner relative bg-slate-950 text-white overflow-hidden py-20 lg:py-24 border-b border-slate-900">
+        <div class="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-indigo-950/80 hero-pattern"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight mb-5">
+                    PECKA volný čas: <br>
+                    <span class="text-indigo-300">Technické kroužky pro děti a mládež</span>
+                </h1>
+                <p class="hero-desc text-slate-200 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl font-normal">
+                    Kroužky digitálních dovedností pro děti a mládež ve vybavené klubovně v sokolovně Malhostovice pod vedením spolku PECKA volný čas, z.s. Počítače, 3D tiskárny Prusa i robotika Arduino.
+                </p>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#krouzky-moduly" class="btn-shimmer inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold py-3.5 px-7 rounded-full shadow-lg shadow-indigo-600/30 hover:scale-105 transition-all text-sm">
+                        Prohlédnout nabídku &darr;
+                    </a>
+                    <a href="#prihlaska-pecka" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/25 font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Přihláška do kroužků &darr;
+                    </a>
+                    <a href="mailto:pecka.cas@gmail.com" class="inline-flex items-center gap-2 text-indigo-300 hover:text-white font-semibold text-sm">
+                        pecka.cas@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="krouzky-moduly" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow space-y-12">
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 block mb-2">Nabídka kroužků pro školní rok 2026/27</span>
+            <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">
+                Kroužky digitálních dovedností & Round dance
+            </h2>
+            <p class="text-slate-600 text-base mt-2 leading-relaxed">
+                Kroužky probíhají po celý školní rok od pondělí 28. 9. 2026 do pátku 28. 5. 2027 v klubovně v budově sokolovny (Malhostovice 152). Doba trvání lekce je 60 minut a časy začátků jsou přizpůsobeny příjezdu a odjezdu autobusů z Drásova. Minimální počet pro otevření je 5, maximální kapacita klubovny 8 účastníků.
+            </p>
+        </div>
+
+        <div class="space-y-6">
+
+            <details class="pecka-accordion glass-card rounded-3xl border border-slate-200 shadow-card bg-white overflow-hidden group" open>
+                <summary class="p-6 sm:p-8 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/80 transition-colors">
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-100">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">Středa 16:25 – 17:25</span>
+                                <span class="text-xs font-semibold text-slate-500">28 lekcí za rok</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-slate-900 mt-1">Hrátky se Scratchem</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-bold text-indigo-600 hidden sm:inline">Rozkliknout podrobnosti</span>
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center accordion-chevron transition-transform duration-200 text-slate-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </summary>
+
+                <div class="px-6 pb-8 sm:px-8 border-t border-slate-100 pt-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-8 space-y-4">
+                            <h4 class="font-display font-bold text-lg text-slate-900">O kroužku a náplň lekcí:</h4>
+                            <p class="text-slate-700 text-base leading-relaxed">
+                                Hravé seznámení se světem algoritmů a programování v populárním prostředí Scratch vyvinutém na MIT. Děti skládají logické barevné bloky kódu, vytvářejí vlastní animace, interaktivní pohádky, minihry a hudební projekty.
+                            </p>
+                            <h4 class="font-display font-bold text-lg text-slate-900 pt-2">Organizace a termíny:</h4>
+                            <ul class="space-y-1.5 text-sm text-slate-700">
+                                <li class="flex items-center gap-2">&bull; <strong>Termín konání:</strong> středa od 16:25 do 17:25 hod.</li>
+                                <li class="flex items-center gap-2">&bull; <strong>Doba trvání lekce:</strong> 1 hodina (přizpůsobeno autobusům z Drásova)</li>
+                                <li class="flex items-center gap-2">&bull; <strong>Období:</strong> 28. 9. 2026 – 28. 5. 2027 (mimo vánoční pauzu 14. 12. – 8. 1. a jarní prázdniny)</li>
+                                <li class="flex items-center gap-2">&bull; <strong>Místo:</strong> Klubovna v budově sokolovny (Malhostovice 152)</li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-4 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Kroužkovné:</span>
+                                <strong class="font-display font-black text-xl text-indigo-700">3 100 Kč / rok</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Termín:</span>
+                                <strong class="font-bold text-slate-900">Středa 16:25 – 17:25</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Kapacita:</span>
+                                <strong class="font-bold text-slate-900">5 až 8 účastníků</strong>
+                            </div>
+                            <a href="#prihlaska-pecka" class="mt-4 block text-center py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl text-sm transition-colors shadow-sm">
+                                Přejít k přihlášce &darr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="pecka-accordion glass-card rounded-3xl border border-indigo-200 shadow-card bg-white overflow-hidden group">
+                <summary class="p-6 sm:p-8 flex items-center justify-between gap-4 cursor-pointer hover:bg-indigo-50/40 transition-colors">
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 border border-indigo-100">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200">Středa 17:30 – 18:30</span>
+                                <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full font-bold">Školní rok 2026/27</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-slate-900 mt-1">ARDUINO pro teenagery</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-bold text-indigo-600 hidden sm:inline">Rozkliknout podrobnosti</span>
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center accordion-chevron transition-transform duration-200 text-slate-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </summary>
+
+                <div class="px-6 pb-8 sm:px-8 border-t border-slate-100 pt-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-8 space-y-4">
+                            <h4 class="font-display font-bold text-lg text-slate-900">O kroužku Arduino pro teenagery:</h4>
+                            <p class="text-slate-700 text-base leading-relaxed">
+                                Praktické zapojování elektronických obvodů a programování mikrokontrolérů Arduino. Účastníci pracují s nepájivým polem, senzory světla, teploty i ultrazvuku, LED diodami, bzučáky a servomotory. Naučí se základy syntaxe jazyka C/C++ a tvorbu interaktivních zařízení.
+                            </p>
+
+                            <h4 class="font-display font-bold text-base text-slate-900 pt-2">Další programy Arduino realizované spolkem:</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                                <div class="p-3.5 rounded-xl bg-indigo-50/60 border border-indigo-100">
+                                    <strong class="font-bold text-slate-900 block text-sm mb-0.5">ARDUINO Robotik</strong>
+                                    <span class="text-slate-600">Pokročilé projekty a robotika pro zájemce od 11 let.</span>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-indigo-50/60 border border-indigo-100">
+                                    <strong class="font-bold text-slate-900 block text-sm mb-0.5">ARDUINO interaktivně</strong>
+                                    <span class="text-slate-600">Senzory, displeje a praktická automatizace.</span>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-indigo-50/60 border border-indigo-100 sm:col-span-2">
+                                    <strong class="font-bold text-slate-900 block text-sm mb-0.5">ARDUINO pro dospěláky</strong>
+                                    <span class="text-slate-600">Kurzy a workshopy pro dospělé se zájmem o chytrou elektroniku a bastlení.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Kroužkovné:</span>
+                                <strong class="font-display font-black text-xl text-indigo-700">3 400 Kč / rok</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Termín:</span>
+                                <strong class="font-bold text-slate-900">Středa 17:30 – 18:30</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Délka lekce:</span>
+                                <strong class="font-bold text-slate-900">1 hodina týdně</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Kapacita:</span>
+                                <strong class="font-bold text-slate-900">5 až 8 účastníků</strong>
+                            </div>
+                            <a href="#prihlaska-pecka" class="mt-4 block text-center py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm transition-colors shadow-md">
+                                Přejít k přihlášce &darr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="pecka-accordion glass-card rounded-3xl border border-slate-200 shadow-card bg-white overflow-hidden group">
+                <summary class="p-6 sm:p-8 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/80 transition-colors">
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 border border-sky-100">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded-full border border-sky-200">Pondělí 15:30 – 16:30</span>
+                                <span class="text-xs font-semibold text-slate-500">Školní rok 2026/27</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-slate-900 mt-1">3D modelování a tisk</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-bold text-indigo-600 hidden sm:inline">Rozkliknout podrobnosti</span>
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center accordion-chevron transition-transform duration-200 text-slate-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </summary>
+
+                <div class="px-6 pb-8 sm:px-8 border-t border-slate-100 pt-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-8 space-y-4">
+                            <h4 class="font-display font-bold text-lg text-slate-900">O kroužku 3D tisku:</h4>
+                            <p class="text-slate-700 text-base leading-relaxed">
+                                Návrh prostorových 3D modelů v počítači v CAD softwarech (např. Tinkercad), příprava dat pro tiskárnu ve sliceru (výplň, vrstvení, podpory) a samotný tisk na spolehlivých českých 3D tiskárnách Prusa přímo v klubovně.
+                            </p>
+                            <h4 class="font-display font-bold text-lg text-slate-900 pt-2">Organizace:</h4>
+                            <ul class="space-y-1.5 text-sm text-slate-700">
+                                <li class="flex items-center gap-2">&bull; <strong>Termín konání:</strong> pondělí od 15:30 do 16:30 hod.</li>
+                                <li class="flex items-center gap-2">&bull; <strong>Trvání:</strong> celoročně 28. 9. 2026 – 28. 5. 2027 (28 lekcí)</li>
+                                <li class="flex items-center gap-2">&bull; <strong>Vybavení:</strong> 3D tiskárny Prusa a počítače k dispozici v klubovně sokolovny</li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-4 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Kroužkovné:</span>
+                                <strong class="font-display font-black text-xl text-indigo-700">3 400 Kč / rok</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Termín:</span>
+                                <strong class="font-bold text-slate-900">Pondělí 15:30 – 16:30</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Délka lekce:</span>
+                                <strong class="font-bold text-slate-900">1 hodina týdně</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Kapacita:</span>
+                                <strong class="font-bold text-slate-900">5 až 8 účastníků</strong>
+                            </div>
+                            <a href="#prihlaska-pecka" class="mt-4 block text-center py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl text-sm transition-colors shadow-sm">
+                                Přejít k přihlášce &darr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="pecka-accordion glass-card rounded-3xl border border-slate-200 shadow-card bg-white overflow-hidden group">
+                <summary class="p-6 sm:p-8 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/80 transition-colors">
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center shrink-0 border border-violet-100">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold text-violet-700 bg-violet-50 px-2.5 py-0.5 rounded-full border border-violet-200">Od 12 let</span>
+                                <span class="text-xs font-semibold text-slate-500">10 setkání po 1,5 h</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-slate-900 mt-1">Poznáváme UNITY</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-bold text-indigo-600 hidden sm:inline">Rozkliknout podrobnosti</span>
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center accordion-chevron transition-transform duration-200 text-slate-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </summary>
+
+                <div class="px-6 pb-8 sm:px-8 border-t border-slate-100 pt-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-8 space-y-4">
+                            <h4 class="font-display font-bold text-lg text-slate-900">Kurz tvorby her v prostředí Unity:</h4>
+                            <p class="text-slate-700 text-base leading-relaxed">
+                                Úvod do tvorby videoher ve světoznámém herním enginu Unity. Účastníci se seznámí s principy herního vývoje, 2D a 3D fyzikou, manipulací s objekty na scéně a skriptováním herní logiky v programovacím jazyce C#.
+                            </p>
+                            <p class="text-xs text-slate-500">Vhodné pro mládež od 12 let se zájmem o vývoj počítačových her.</p>
+                        </div>
+                        <div class="lg:col-span-4 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Formát:</span>
+                                <strong class="font-bold text-slate-900">10 setkání po 1,5 hodině</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Věk:</span>
+                                <strong class="font-bold text-slate-900">Od 12 let</strong>
+                            </div>
+                            <a href="#prihlaska-pecka" class="mt-4 block text-center py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl text-sm transition-colors shadow-sm">
+                                Poptat termín Unity
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+
+        <section id="prihlaska-pecka" class="bg-gradient-to-b from-slate-100 to-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm scroll-mt-28">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 block mb-2">Přihláška 2026/27</span>
+                <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight mb-3">
+                    Elektronická přihláška do kroužků PECKA
+                </h2>
+                <p class="text-slate-600 text-base leading-relaxed">
+                    Máte zájem o Scratch, Arduino nebo 3D tisk? Vyplňte formulář níže nebo napište předsedovi spolku Františku Grézlovi na e-mail <a href="mailto:pecka.cas@gmail.com" class="text-indigo-600 font-bold underline">pecka.cas@gmail.com</a>.
+                </p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-4 sm:p-8 shadow-card border border-slate-200/90 overflow-hidden bg-white max-w-4xl mx-auto mb-10">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc8LVABBBnPVzOqjZX5jnCflkmlkv4sGmJ84jlCHjVyxm2qsg/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" class="w-full rounded-2xl">
+                    Načítání formuláře přihlášky PECKA...
+                </iframe>
+                <div class="mt-4 pt-4 border-t border-slate-100 text-center">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8LVABBBnPVzOqjZX5jnCflkmlkv4sGmJ84jlCHjVyxm2qsg/viewform" target="_blank" rel="noopener" class="text-sm font-bold text-indigo-600 hover:underline inline-flex items-center gap-1.5">
+                        <span>Otevřít přihlášku PECKA v samostatném okně</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto text-center space-y-4">
+                <h3 class="font-display font-bold text-xl text-slate-900">Průběžná naplněnost kroužků</h3>
+                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm p-2">
+                    <iframe width="100%" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR9-SX5ecsPNj250aeBFSPWmy-zC4t1xqyFT4lIeAmng6TjMj01gslPqQkHuf5xovDvGb2tdZZquhHP/pubchart?oid=1552914234&amp;format=image" class="w-full">
+                        Graf naplněnosti kroužků PECKA
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer-container"></div>
+
+    <script src="site-common.js"></script>
+</body>
+</html>

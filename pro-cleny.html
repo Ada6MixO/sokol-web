@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro členy | Příspěvky, Dokumenty, GDPR & Valná hromada | TJ Sokol Malhostovice</title>
+    <meta name="description" content="Informace pro členy TJ Sokol Malhostovice. Pokyny k platbě členských příspěvků na účet FIO, přihláška člena, GDPR souhlas a zápisy z Valné hromady.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sokol: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#E3000F',
+                            600: '#cb000e',
+                            700: '#a3000b',
+                            800: '#850009',
+                            900: '#540006',
+                            red: '#E3000F',
+                            darkred: '#99000A',
+                            bg: '#F8FAFC',
+                            text: '#0F172A',
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03)',
+                        'card-hover': '0 25px 45px -12px rgba(227, 0, 15, 0.14), 0 8px 16px -4px rgba(15, 23, 42, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-red-500 selection:text-white">
+
+    <div id="site-header-container"></div>
+
+    <div class="hero-banner relative bg-slate-950 text-white overflow-hidden py-20 lg:py-24 border-b border-slate-900 hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/80"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight mb-5">
+                    Informace pro členy <br>
+                    <span class="hero-highlight">& spolková agenda</span>
+                </h1>
+                <p class="hero-desc text-slate-200 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl font-normal">
+                    Přehledné pokyny k platbě členských příspěvků, oficiální formuláře přihlášky do jednoty, zpracování osobních údajů (GDPR) a zápisy z Valné hromady.
+                </p>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#prispevky" class="btn-shimmer inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold py-3.5 px-7 rounded-full shadow-lg shadow-red-600/30 hover:scale-105 transition-all text-sm">
+                        Členské příspěvky &darr;
+                    </a>
+                    <a href="#dokumenty" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/25 font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Dokumenty & GDPR &darr;
+                    </a>
+                    <a href="#valna-hromada" class="inline-flex items-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Valná hromada &darr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow space-y-20">
+
+        <section id="prispevky" class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-card bg-white scroll-mt-28">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-1">Finanční vyrovnání</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 leading-tight">
+                        Členské příspěvky TJ Sokol Malhostovice
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg mt-2 leading-relaxed">
+                        Členské příspěvky se hradí ročně bezhotovostně na bankovní účet naší tělocvičné jednoty. Příspěvek zahrnuje úrazové pojištění sportovce a kryje náklady na provoz tělocvičny, energie a sportovní nářadí.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
+                        <h3 class="font-display font-extrabold text-xl text-slate-900">Platební pokyny pro převod:</h3>
+
+                        <div class="space-y-3 text-sm">
+                            <div class="p-3.5 rounded-2xl bg-white border border-slate-200">
+                                <span class="text-xs text-slate-500 font-medium block">Číslo bankovního účtu (FIO banka):</span>
+                                <strong class="font-mono font-bold text-lg text-slate-900 block mt-0.5">2302839564 / 2010</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white border border-slate-200">
+                                <span class="text-xs text-slate-500 font-medium block">Variabilní symbol (VS):</span>
+                                <strong class="text-slate-900 font-bold block mt-0.5">Rodné číslo člena (bez lomítka) nebo rok narození</strong>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white border border-slate-200">
+                                <span class="text-xs text-slate-500 font-medium block">Zpráva pro příjemce (velmi důležité):</span>
+                                <strong class="text-sokol-red font-bold block mt-0.5">Jméno a příjmení člena + oddíl (např. Jan Novák - Zápasníček)</strong>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-red-50 border border-red-200 text-xs text-slate-700 leading-relaxed">
+                            <strong>Upozornění:</strong> Uveďte prosím vždy jméno cvičence, aby mohla pokladní platbu správně spárovat s evidencí členské základny.
+                        </div>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border-2 border-red-100 shadow-md space-y-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-sokol-red block mb-1">Výše příspěvků pro rok <span data-sokol-prispevek="rok">2026 / 2027</span>:</span>
+                            <div class="space-y-3 pt-2">
+                                <div class="flex justify-between items-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                                    <span class="font-bold text-slate-800 text-sm">Děti a mládež do 18 let</span>
+                                    <span class="font-display font-extrabold text-lg text-sokol-red" data-sokol-prispevek="deti">600 Kč / rok</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                                    <span class="font-bold text-slate-800 text-sm">Dospělí členové</span>
+                                    <span class="font-display font-extrabold text-lg text-slate-900" data-sokol-prispevek="dospeli">1 000 Kč / rok</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                                    <span class="font-bold text-slate-800 text-sm">Senioři (nad 65 let)</span>
+                                    <span class="font-display font-extrabold text-lg text-slate-900" data-sokol-prispevek="seniori">500 Kč / rok</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">Dotazy k platbám:</span>
+                            <p class="text-sm text-slate-700">Pokladník: <strong>Alena Uherková</strong></p>
+                            <p class="text-sm text-slate-700 mt-1">E-mail: <a href="mailto:info@sokol-malhostovice.cz" class="text-sokol-red font-bold hover:underline">info@sokol-malhostovice.cz</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="dokumenty" class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-card bg-white scroll-mt-28">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-1">Oficiální dokumentace</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 leading-tight">
+                        Dokumenty jednoty & Zpracování osobních údajů (GDPR)
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg mt-2 leading-relaxed">
+                        Dokumenty ke stažení a informace o ochraně osobních údajů v souladu s Nařízením Evropského parlamentu a Rady (EU) 2016/679 (GDPR) a zákonem č. 115/2001 Sb. o podpoře sportu.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between card-hover-effect">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-2xl bg-red-100 text-sokol-red flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-900">Přihláška do TJ Sokol Malhostovice</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Oficiální přihláška za člena tělocvičné jednoty pro děti i dospělé. Vyplněnou a podepsanou přihlášku odevzdejte trenérovi oddílu.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-200">
+                            <a href="oddily.html#prihlaska" class="btn-shimmer inline-flex items-center gap-2 text-sm font-bold text-sokol-red hover:underline">
+                                <span>Informace k přihlášení do oddílů</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between card-hover-effect">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-900">Souhlas GDPR a ochrana údajů</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Informace o zpracování a uchovávání osobních údajů pro účely evidence členské základny spolku a České unie sportu (ČUS).
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-200">
+                            <span class="text-xs text-slate-500 font-semibold block">Podrobné znění níže na této stránce</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-4 text-sm text-slate-700 leading-relaxed">
+                    <h4 class="font-display font-bold text-lg text-slate-900">Informace o zpracování osobních údajů a souhlas:</h4>
+                    <p>
+                        Správce (TJ Sokol Malhostovice, z.s., IČ: 41539885) je v souvislosti s členstvím v jednotě povinen na základě § 3a odst. 3 zákona č. 115/2001 Sb. o podpoře sportu zpracovávat jméno a příjmení, datum narození, adresu místa pobytu (u cizince také státní občanství).
+                    </p>
+                    <p>
+                        Veškeré osobní údaje jsou zpracovávány výhradně za účelem vedení evidence členské základny a s tím souvisejícími činnostmi (žádosti o dotace, pojištění sportovců v rámci ČUS). Osobní údaje jsou uchovávány po dobu 10 let ode dne ukončení činnosti v jednotě.
+                    </p>
+                    <p>
+                        Člen (či jeho zákonný zástupce) dává zároveň souhlas se zpracováním fotografií, videí a sportovních výsledků pro účely prezentace činnosti jednoty na oficiálním webu a sociálních sítích. Souhlas lze kdykoliv písemně odvolat.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="valna-hromada" class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-card bg-white scroll-mt-28">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-1">Nejvyšší orgán jednoty</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 leading-tight">
+                        Valná hromada TJ Sokol Malhostovice
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg mt-2 leading-relaxed">
+                        Valná hromada je svolávána výborem jednoty minimálně jednou ročně a je otevřená pro všechny členy i zájemce z řad veřejnosti. Schvaluje zprávu o hospodaření, zprávu kontrolní komise, rozpočet na další období a volí členy výboru. Poslední Valná hromada se konala v pátek 25. 9. od 18:00 v přísálí sokolovny.
+                    </p>
+                </div>
+
+                <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                        <h3 class="font-display font-extrabold text-xl text-slate-900">Materiály z Valné hromady:</h3>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 gap-2">
+                            <div>
+                                <strong class="text-slate-900 text-base block font-bold">Zápis z Valné hromady (konané 25. 9.)</strong>
+                                <span class="text-xs text-slate-500">Proběhla v pátek 25. 9. od 18:00 v sokolovně</span>
+                            </div>
+                            <span class="text-xs font-semibold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">Proběhlo</span>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 gap-2">
+                            <div>
+                                <strong class="text-slate-900 text-base block font-bold">Zpráva o hospodaření a činnosti jednoty</strong>
+                                <span class="text-xs text-slate-500">Předkládá hospodář a předseda výboru</span>
+                            </div>
+                            <span class="text-xs font-semibold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">K nahlédnutí u výboru</span>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 gap-2">
+                            <div>
+                                <strong class="text-slate-900 text-base block font-bold">Zpráva Kontrolní komise</strong>
+                                <span class="text-xs text-slate-500">Předseda: Ing. František Odehnal</span>
+                            </div>
+                            <span class="text-xs font-semibold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">Schváleno</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+                        <span class="text-sm text-slate-600">Zajímají vás zástupci vedení a historie spolku?</span>
+                        <a href="o-nas.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-sokol-red text-white text-sm font-bold transition-colors">
+                            <span>Přejít na stránku O nás & historie</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer-container"></div>
+
+    <script src="site-common.js"></script>
+</body>
+</html>

@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalendář, Rozvrh & Plánované akce | TJ Sokol Malhostovice</title>
+    <meta name="description"
+        content="Přehledný kalendář sokolovny Malhostovice. Týdenní rozvrh pravidelných cvičení a seznam plánovaných kulturních událostí pro rok 2026/2027.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        sokol: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#E3000F',
+                            600: '#cb000e',
+                            700: '#a3000b',
+                            800: '#850009',
+                            900: '#540006',
+                            red: '#E3000F',
+                            darkred: '#99000A',
+                            bg: '#F8FAFC',
+                            text: '#0F172A',
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03)',
+                        'card-hover': '0 25px 45px -12px rgba(227, 0, 15, 0.14), 0 8px 16px -4px rgba(15, 23, 42, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-red-500 selection:text-white">
+
+    <div id="site-header-container"></div>
+
+    <div
+        class="hero-banner relative bg-slate-950 text-white overflow-hidden py-20 lg:py-24 border-b border-slate-900 hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/80"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight mb-5">
+                    Kalendář, rozvrh <br>
+                    <span class="hero-highlight">& plánované akce</span>
+                </h1>
+                <p class="hero-desc text-slate-200 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+                    Všechny termíny na jednom místě. Přehledný kalendář obsazenosti tělocvičny, týdenní rozvrh oddílů i
+                    kalendář kulturních událostí.
+                </p>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#custom-kalendar"
+                        class="btn-shimmer inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold py-3.5 px-7 rounded-full shadow-lg shadow-red-600/30 hover:scale-105 transition-all text-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                        Přehledný kalendář &darr;
+                    </a>
+                    <a href="#tydenni-rozvrh"
+                        class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/25 font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Týdenní rozvrh oddílů &darr;
+                    </a>
+                    <a href="#planovane-akce"
+                        class="inline-flex items-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold py-3.5 px-6 rounded-full transition-all text-sm">
+                        Plánované akce &darr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow space-y-20">
+
+        <section id="custom-kalendar" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-card bg-white">
+
+                <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-6 border-b border-slate-200">
+                    <div>
+                        <span
+                            class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-1">Obsazenost
+                            tělocvičny</span>
+                        <h2 class="font-display font-black text-2xl sm:text-3xl text-slate-900">Rozvrh tělocvičny &
+                            obsazenost</h2>
+                        <p class="text-slate-600 text-sm mt-1">Přehled probíhajících cvičení a volných termínů v
+                            sokolovně.</p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3">
+
+                        <div
+                            class="inline-flex items-center bg-slate-100 p-1.5 rounded-2xl border border-slate-200 text-xs font-bold">
+                            <button id="cal-mode-week" type="button"
+                                class="px-4 py-2 rounded-xl transition-all bg-white text-sokol-red shadow-sm">
+                                Týdenní rozpis
+                            </button>
+                            <button id="cal-mode-month" type="button"
+                                class="px-4 py-2 rounded-xl transition-all text-slate-600 hover:text-slate-900">
+                                Měsíční kalendář
+                            </button>
+                        </div>
+
+                        <div class="inline-flex items-center bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+                            <button id="cal-prev" type="button"
+                                class="p-2 hover:bg-white rounded-xl text-slate-700 hover:text-slate-900 transition-colors"
+                                title="Předchozí">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <span id="cal-date-title"
+                                class="font-display font-extrabold text-sm sm:text-base text-slate-900 px-3 sm:px-4 min-w-[160px] text-center">Tento
+                                týden</span>
+                            <button id="cal-next" type="button"
+                                class="p-2 hover:bg-white rounded-xl text-slate-700 hover:text-slate-900 transition-colors"
+                                title="Následující">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <button id="cal-today" type="button"
+                            class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-bold rounded-2xl border border-slate-200 transition-colors">
+                            Dnes
+                        </button>
+                    </div>
+                </div>
+
+                <div id="cal-view-week" class="space-y-4">
+                    <div id="cal-week-cards"
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-3">
+
+                    </div>
+                </div>
+
+                <div id="cal-view-month" class="hidden space-y-6">
+                    <div class="overflow-x-auto">
+                        <div class="min-w-[650px]">
+
+                            <div
+                                class="grid grid-cols-7 gap-2 mb-2 text-center text-xs font-bold uppercase tracking-wider text-slate-500">
+                                <div class="py-2 bg-slate-50 rounded-xl">Pondělí</div>
+                                <div class="py-2 bg-slate-50 rounded-xl">Úterý</div>
+                                <div class="py-2 bg-slate-50 rounded-xl">Středa</div>
+                                <div class="py-2 bg-slate-50 rounded-xl">Čtvrtek</div>
+                                <div class="py-2 bg-slate-50 rounded-xl">Pátek</div>
+                                <div class="py-2 bg-slate-100 text-slate-700 rounded-xl">Sobota</div>
+                                <div class="py-2 bg-slate-100 text-slate-700 rounded-xl">Neděle</div>
+                            </div>
+
+                            <div id="cal-grid" class="grid grid-cols-7 gap-2"></div>
+                        </div>
+                    </div>
+
+                    <div id="cal-day-detail" class="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                            <h4 id="cal-detail-date" class="font-display font-extrabold text-lg text-slate-900">Program
+                                na vybraný den</h4>
+                            <span id="cal-detail-count"
+                                class="text-xs font-bold text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200">0
+                                událostí</span>
+                        </div>
+                        <div id="cal-detail-events" class="space-y-2 pt-1 text-sm">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-end gap-4 text-xs">
+                    <a href="https://calendar.google.com/calendar/u/0/r?cid=cGVja2EuY2FzQGdtYWlsLmNvbQ" target="_blank"
+                        rel="noopener"
+                        class="inline-flex items-center gap-2 text-sm font-bold text-sokol-red hover:underline bg-red-50 hover:bg-red-100 border border-red-200 px-4 py-2.5 rounded-2xl transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" />
+                        </svg>
+                        Otevřít v Google Kalendáři &rarr;
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="tydenni-rozvrh" class="scroll-mt-28">
+            <div class="mb-8 pb-4 border-b border-slate-200">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-1">Pravidelný
+                    rozvrh cvičení</span>
+                <h2 class="font-display font-black text-2xl sm:text-3xl text-slate-900 tracking-tight">Týdenní rozvrh
+                    oddílů v sokolovně</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-1">Stálé časy tréninků našich oddílů v sále a přísálí
+                    sokolovny Malhostovice.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+                <div
+                    class="glass-card rounded-3xl p-6 border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div class="pb-3 mb-4 border-b border-slate-100">
+                            <h3 class="font-display font-extrabold text-lg text-slate-900">Pondělí</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">16:00
+                                    – 17:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Taneční kroužek (5–10 let)
+                                </h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Vedení jednoty</span>
+                                <span class="text-xs text-slate-500 block">Místo: Sál sokolovny</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">18:00
+                                    – 19:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Taneční kroužek (10–14 let)
+                                </h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Vedení jednoty</span>
+                                <span class="text-xs text-slate-500 block">Místo: Sál sokolovny</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">19:00
+                                    – 20:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Zdravotní cvičení žen</h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Marie Baláková</span>
+                                <span class="text-xs text-slate-500 block">Místo: Sál sokolovny</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl p-6 border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div class="pb-3 mb-4 border-b border-slate-100">
+                            <h3 class="font-display font-extrabold text-lg text-slate-900">Úterý</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">17:30
+                                    – 19:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Zápasníček</h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Pavel Leksa</span>
+                                <span class="text-xs text-slate-500 block">Místo: Sál sokolovny</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl p-6 border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div class="pb-3 mb-4 border-b border-slate-100">
+                            <h3 class="font-display font-extrabold text-lg text-slate-900">Středa</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">17:30
+                                    – 19:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Volejbal – pokročilí</h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Lenka Chvátalová</span>
+                                <span class="text-xs text-slate-500 block">Místo: Sál sokolovny</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">19:00
+                                    – 20:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Zdravotní cvičení žen</h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Marie Baláková</span>
+                                <span class="text-xs text-slate-500 block">Místo: Sál sokolovny</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl p-6 border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div class="pb-3 mb-4 border-b border-slate-100">
+                            <h3 class="font-display font-extrabold text-lg text-slate-900">Čtvrtek</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">19:00
+                                    – 20:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Jóga a relaxace</h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Nina Odehnalová & Alena
+                                    Uherková</span>
+                                <span class="text-xs text-slate-500 block">Místo: Přísálí sokolovny</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl p-6 border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div class="pb-3 mb-4 border-b border-slate-100">
+                            <h3 class="font-display font-extrabold text-lg text-slate-900">Pátek</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">19:00
+                                    – 20:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Zdravotní cvičení žen</h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Marie Baláková</span>
+                                <span class="text-xs text-slate-500 block">Místo: Sál sokolovny</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-100">
+                                <span
+                                    class="text-xs font-bold text-sokol-red block uppercase tracking-wider mb-0.5">20:00
+                                    – 22:00</span>
+                                <h4 class="font-bold text-sm text-slate-900 leading-snug">Volejbal – mírně pokročilí
+                                </h4>
+                                <span class="text-xs text-slate-600 block mt-1">Vedoucí: Miroslav Pospíšil</span>
+                                <span class="text-xs text-slate-500 block">Místo: Sál sokolovny</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="planovane-akce" class="scroll-mt-28">
+            <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-200">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-sokol-red block mb-1">Seznam
+                        událostí na rok 2026 / 2027</span>
+                    <h2 class="font-display font-black text-2xl sm:text-3xl text-slate-900 tracking-tight">Plánované
+                        akce pro rok 2026 / 2027</h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-1">Sokolovna Malhostovice žije po celý rok. Přijďte
+                        se bavit a podpořit společenský život.</p>
+                </div>
+                <a href="index.html#aktuality"
+                    class="text-sm font-bold text-sokol-red hover:underline flex items-center gap-1">
+                    Aktuální plakáty a pozvánky &rarr;
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div
+                    class="glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div
+                            class="relative h-44 bg-gradient-to-br from-indigo-700 via-purple-700 to-indigo-900 p-6 flex flex-col justify-between text-white">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20 self-start">
+                                Pátek 18. 9. 2026 &bull; 20:00 – 02:00
+                            </span>
+                            <div>
+                                <span class="text-xs font-semibold text-purple-200 block mb-0.5">Taneční zábava</span>
+                                <h3 class="font-display font-black text-2xl text-white">DJ Boris diskotéka</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Tradiční diskotéka v sále sokolovny s hudebními hity všech žánrů. Vstupné 80 Kč, bohatě
+                                zásobený sokolský bar a skvělá atmosféra pro všechny generace.
+                            </p>
+                            <div
+                                class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                                <span>Sál sokolovny Malhostovice</span>
+                                <span class="font-bold text-indigo-700">Vstupné: 80 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div
+                            class="relative h-44 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 p-6 flex flex-col justify-between text-white">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20 self-start">
+                                Pátek 25. 9. &bull; od 18:00
+                            </span>
+                            <div>
+                                <span class="text-xs font-semibold text-slate-300 block mb-0.5">Spolkový život</span>
+                                <h3 class="font-display font-black text-2xl text-white">Valná hromada jednoty</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Výroční schůze tělocvičné jednoty otevřená pro členy i širokou veřejnost. Zpráva o
+                                činnosti oddílů, hospodaření spolku, rozpočet a plány na další období.
+                            </p>
+                            <div
+                                class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                                <span>Přísálí sokolovny</span>
+                                <span class="font-bold text-emerald-700">Pro všechny zájemce</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div
+                            class="relative h-44 bg-gradient-to-br from-orange-600 via-amber-600 to-orange-800 p-6 flex flex-col justify-between text-white">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20 self-start">
+                                Sobota 31. 10. 2026 &bull; 17:00
+                            </span>
+                            <div>
+                                <span class="text-xs font-semibold text-amber-200 block mb-0.5">Pro děti a rodiče</span>
+                                <h3 class="font-display font-black text-2xl text-white">Lampionový průvod & sklep</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Sraz masek u sokolovny v 17:00, lampionový průvod obcí se světýlky, stezka odvahy a
+                                strašidelný sklep sokolovny pro odvážné děti i dospělé. Teplý čaj a občerstvení.
+                            </p>
+                            <div
+                                class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                                <span>Sokolovna</span>
+                                <span class="font-bold text-orange-700">Vstup: Zdarma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div
+                            class="relative h-44 bg-gradient-to-br from-amber-600 via-yellow-600 to-amber-800 p-6 flex flex-col justify-between text-white">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20 self-start">
+                                Sobota 17. 4. 2027 &bull; 14:00 – 23:00
+                            </span>
+                            <div>
+                                <span class="text-xs font-semibold text-amber-200 block mb-0.5">Vinařská tradice</span>
+                                <h3 class="font-display font-black text-2xl text-white">Košt vín v Malhostovicích</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Přehlídka a ochutnávka stovek vzorků bílých i červených vín od moravských vinařů a
+                                místních pěstitelů. Vstupné zahrnuje degustační skleničku a katalog vzorků. Cimbálová
+                                muzika a teplé občerstvení.
+                            </p>
+                            <div
+                                class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                                <span>Sál sokolovny Malhostovice</span>
+                                <span class="font-bold text-amber-700">Vstupné: 150 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div
+                            class="relative h-44 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-800 p-6 flex flex-col justify-between text-white">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20 self-start">
+                                Sobota 29. 5. 2027 &bull; 14:00 – 18:00
+                            </span>
+                            <div>
+                                <span class="text-xs font-semibold text-emerald-200 block mb-0.5">Rodinné
+                                    odpoledne</span>
+                                <h3 class="font-display font-black text-2xl text-white">Dětský den v sokolovně</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Sportovní stanoviště, soutěže obratnosti a rychlosti pro děti, sladké odměny a odpolední
+                                program pro celé rodiny v areálu sokolovny.
+                            </p>
+                            <div
+                                class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                                <span>Areál u sokolovny Malhostovice</span>
+                                <span class="font-bold text-emerald-700">Vstup: Nevim kolik</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl overflow-hidden card-hover-effect border border-slate-200/90 shadow-card flex flex-col justify-between bg-white">
+                    <div>
+                        <div
+                            class="relative h-44 bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800 p-6 flex flex-col justify-between text-white">
+                            <span
+                                class="bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-white/20 self-start">
+                                Pátek – Neděle (srpen) &bull; datum nevim
+                            </span>
+                            <div>
+                                <span class="text-xs font-semibold text-purple-200 block mb-0.5">Folklor a
+                                    tradice</span>
+                                <h3 class="font-display font-black text-2xl text-white">Vavřinecké krojované hody</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Tradiční Vavřinecké krojované hody v Malhostovicích trvají od pátku do neděle v areálu u
+                                sokolovny. Páteční stavění máje, víkendový průvod krojovaných stárků, vystoupení dětí a
+                                večerní hodové zábavy.
+                            </p>
+                            <div
+                                class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                                <span>V areálu u sokolovny</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer-container"></div>
+
+    <script src="site-common.js"></script>
+
+    <script>
+            (function () {
+                const monthNames = ["Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"];
+                const dayNamesShort = ["Po", "Út", "St", "Čt", "Pá", "So", "Ne"];
+                const dayNamesFull = ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"];
+
+                const regularEvents = [
+                    {
+                        day: 1,
+                        time: "19:00 – 20:00",
+                        title: "Zdravotní cvičení ženy",
+                        place: "Sál",
+                        start: new Date(2025, 9, 13)
+                    },
+                    {
+                        day: 2,
+                        time: "17:30 – 19:15",
+                        title: "Zápasníček",
+                        place: "Sál",
+                        start: new Date(2025, 9, 14)
+                    },
+                    {
+                        day: 2,
+                        time: "19:30 – 21:00",
+                        title: "Floorbal Drásov",
+                        place: "Sál",
+                        start: new Date(2025, 9, 14),
+                        end: new Date(2026, 7, 31, 23, 59, 59)
+                    },
+                    {
+                        day: 3,
+                        time: "17:30 – 19:00",
+                        title: "Volejbal",
+                        place: "Sál",
+                        start: new Date(2025, 9, 15)
+                    },
+                    {
+                        day: 3,
+                        time: "19:00 – 20:00",
+                        title: "Zdravotní cvičení ženy",
+                        place: "Sál",
+                        start: new Date(2025, 9, 15)
+                    },
+                    {
+                        day: 4,
+                        time: "19:00 – 20:00",
+                        title: "Jóga",
+                        place: "Přísálí",
+                        start: new Date(2025, 9, 16)
+                    },
+                    {
+                        day: 5,
+                        time: "17:30 – 19:15",
+                        title: "Zápasníček",
+                        place: "Sál",
+                        start: new Date(2025, 9, 17),
+                        end: new Date(2026, 8, 3, 23, 59, 59)
+                    },
+                    {
+                        day: 5,
+                        time: "17:30 – 19:15",
+                        title: "Rezerva",
+                        place: "Sál",
+                        start: new Date(2026, 8, 4)
+                    },
+                    {
+                        day: 5,
+                        time: "19:00 – 20:00",
+                        title: "Zdravotní cvičení ženy",
+                        place: "Sál",
+                        start: new Date(2025, 9, 17)
+                    },
+                    {
+                        day: 5,
+                        time: "20:00 – 22:00",
+                        title: "Volejbal Pospíšil",
+                        place: "Sál",
+                        start: new Date(2025, 9, 17)
+                    },
+                    {
+                        day: 7,
+                        time: "11:00 – 12:00",
+                        title: "Volejbal malý",
+                        place: "Sál",
+                        start: new Date(2025, 9, 19),
+                        end: new Date(2026, 8, 5, 23, 59, 59)
+                    }
+                ];
+
+                const todayInit = new Date();
+                let currentMode = 'week';
+                let currentWeekStart = getMonday(todayInit);
+                let currentYear = todayInit.getFullYear();
+                let currentMonth = todayInit.getMonth();
+                let selectedMonthDateStr = `${currentYear}-${formatTwoDigits(todayInit.getMonth() + 1)}-${formatTwoDigits(todayInit.getDate())}`;
+
+                const btnModeWeek = document.getElementById('cal-mode-week');
+                const btnModeMonth = document.getElementById('cal-mode-month');
+                const viewWeek = document.getElementById('cal-view-week');
+                const viewMonth = document.getElementById('cal-view-month');
+                const calDateTitle = document.getElementById('cal-date-title');
+                const calPrevBtn = document.getElementById('cal-prev');
+                const calNextBtn = document.getElementById('cal-next');
+                const calTodayBtn = document.getElementById('cal-today');
+                const weekCards = document.getElementById('cal-week-cards');
+                const calGrid = document.getElementById('cal-grid');
+                const detailDate = document.getElementById('cal-detail-date');
+                const detailCount = document.getElementById('cal-detail-count');
+                const detailEvents = document.getElementById('cal-detail-events');
+
+                function formatTwoDigits(n) {
+                    return n < 10 ? '0' + n : '' + n;
+                }
+
+                function getMonday(d) {
+                    const date = new Date(d);
+                    const day = date.getDay();
+                    const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+                    return new Date(date.setDate(diff));
+                }
+
+                function getEventsForDate(dateObj) {
+                    const checkDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate(), 12, 0, 0);
+                    const jsDay = dateObj.getDay() === 0 ? 7 : dateObj.getDay();
+
+                    return regularEvents.filter(ev => {
+                        if (ev.day !== jsDay) return false;
+                        if (checkDate < ev.start) return false;
+                        if (ev.end && checkDate > ev.end) return false;
+                        return true;
+                    });
+                }
+
+                function setMode(mode) {
+                    currentMode = mode;
+                    if (mode === 'week') {
+                        btnModeWeek.className = 'px-4 py-2 rounded-xl transition-all bg-white text-sokol-red shadow-sm';
+                        btnModeMonth.className = 'px-4 py-2 rounded-xl transition-all text-slate-600 hover:text-slate-900';
+                        viewWeek.classList.remove('hidden');
+                        viewMonth.classList.add('hidden');
+                        renderWeekView();
+                    } else {
+                        btnModeMonth.className = 'px-4 py-2 rounded-xl transition-all bg-white text-sokol-red shadow-sm';
+                        btnModeWeek.className = 'px-4 py-2 rounded-xl transition-all text-slate-600 hover:text-slate-900';
+                        viewWeek.classList.add('hidden');
+                        viewMonth.classList.remove('hidden');
+                        renderMonthView();
+                    }
+                }
+
+                btnModeWeek?.addEventListener('click', () => setMode('week'));
+                btnModeMonth?.addEventListener('click', () => setMode('month'));
+
+                function renderWeekView() {
+                    const weekEnd = new Date(currentWeekStart);
+                    weekEnd.setDate(weekEnd.getDate() + 6);
+
+                    const startStr = `${currentWeekStart.getDate()}. ${currentWeekStart.getMonth() === weekEnd.getMonth() ? '' : monthNames[currentWeekStart.getMonth()] + ' '}`;
+                    const endStr = `${weekEnd.getDate()}. ${monthNames[weekEnd.getMonth()]} ${weekEnd.getFullYear()}`;
+                    calDateTitle.textContent = `${startStr}– ${endStr}`;
+
+                    weekCards.innerHTML = '';
+
+                    const today = new Date();
+                    const todayKey = `${today.getFullYear()}-${formatTwoDigits(today.getMonth() + 1)}-${formatTwoDigits(today.getDate())}`;
+
+                    for (let i = 0; i < 7; i++) {
+                        const dayDate = new Date(currentWeekStart);
+                        dayDate.setDate(dayDate.getDate() + i);
+                        const dayKey = `${dayDate.getFullYear()}-${formatTwoDigits(dayDate.getMonth() + 1)}-${formatTwoDigits(dayDate.getDate())}`;
+                        const isToday = dayKey === todayKey;
+                        const isWeekend = i >= 5;
+                        const events = getEventsForDate(dayDate);
+
+                        const card = document.createElement('div');
+                        card.className = `p-4 sm:p-5 rounded-3xl border flex flex-col justify-between transition-all ${isToday
+                            ? 'bg-red-50/70 border-red-300 ring-2 ring-red-500/20 shadow-md'
+                            : (isWeekend ? 'bg-slate-50 border-slate-200' : 'bg-white border-slate-200 shadow-xs')
+                            }`;
+
+                        let eventsHtml = '';
+                        if (events.length === 0) {
+                            eventsHtml = `
+                        <div class="py-6 text-center">
+                            <span class="inline-block text-xs font-semibold text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">
+                                Volno
+                            </span>
+                        </div>
+                    `;
+                        } else {
+                            eventsHtml = `<div class="space-y-2 mt-2">` + events.map(ev => {
+                                return `
+                            <div class="p-2.5 rounded-2xl bg-white border border-red-100 shadow-2xs">
+                                <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-md border bg-red-50 text-sokol-red border-red-100 mb-1">
+                                    ${ev.time}
+                                </span>
+                                <strong class="text-xs text-slate-900 block font-bold leading-tight">${ev.title}</strong>
+                                <span class="text-[11px] text-slate-500 block mt-0.5">${ev.place}</span>
+                            </div>
+                        `;
+                            }).join('') + `</div>`;
+                        }
+
+                        card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between pb-2.5 border-b ${isToday ? 'border-red-200' : 'border-slate-100'}">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider ${isToday ? 'text-sokol-red' : 'text-slate-500'} block">
+                                    ${dayNamesFull[i]}
+                                </span>
+                                <span class="font-display font-black text-lg ${isToday ? 'text-sokol-red' : 'text-slate-900'}">
+                                    ${dayDate.getDate()}. ${monthNames[dayDate.getMonth()].slice(0, 3)}
+                                </span>
+                            </div>
+                            ${isToday ? '<span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-sokol-red text-white uppercase tracking-wider">Dnes</span>' : `<span class="text-xs font-bold text-slate-400">${dayNamesShort[i]}</span>`}
+                        </div>
+                        ${eventsHtml}
+                    </div>
+                    <div class="pt-3 mt-3 border-t border-slate-100 text-center">
+                        <span class="text-[10px] text-slate-400 font-medium">Sokolovna Malhostovice</span>
+                    </div>
+                `;
+
+                        weekCards.appendChild(card);
+                    }
+                }
+
+                function renderMonthView() {
+                    calDateTitle.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+                    calGrid.innerHTML = '';
+
+                    const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+                    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+                    let startDay = firstDayOfMonth.getDay() - 1;
+                    if (startDay === -1) startDay = 6;
+
+                    for (let i = 0; i < startDay; i++) {
+                        const emptyCell = document.createElement('div');
+                        emptyCell.className = 'min-h-[85px] p-2 bg-slate-50/40 rounded-2xl border border-slate-100 opacity-30';
+                        calGrid.appendChild(emptyCell);
+                    }
+
+                    for (let d = 1; d <= daysInMonth; d++) {
+                        const thisDate = new Date(currentYear, currentMonth, d);
+                        const dateKey = `${currentYear}-${formatTwoDigits(currentMonth + 1)}-${formatTwoDigits(d)}`;
+                        const events = getEventsForDate(thisDate);
+                        const isSelected = dateKey === selectedMonthDateStr;
+                        const isWeekend = thisDate.getDay() === 0 || thisDate.getDay() === 6;
+
+                        const dayCell = document.createElement('div');
+                        dayCell.className = `min-h-[85px] p-2 sm:p-2.5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${isSelected
+                            ? 'border-sokol-red ring-2 ring-red-500/20 bg-red-50/40 shadow-sm'
+                            : isWeekend ? 'bg-slate-50 border-slate-200 hover:bg-slate-100' : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm'
+                            }`;
+
+                        let eventsBadgesHtml = '';
+                        events.slice(0, 2).forEach(ev => {
+                            eventsBadgesHtml += `<span class="block truncate text-[11px] font-semibold px-1.5 py-0.5 rounded-md border bg-red-50 text-sokol-red border-red-100 mt-1 leading-tight">${ev.title}</span>`;
+                        });
+                        if (events.length > 2) {
+                            eventsBadgesHtml += `<span class="text-[10px] font-bold text-slate-500 block mt-0.5">+ ${events.length - 2} další</span>`;
+                        }
+
+                        dayCell.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="font-display font-black text-sm ${isSelected ? 'text-sokol-red' : 'text-slate-800'}">${d}</span>
+                        ${events.length > 0 ? `<span class="w-2 h-2 rounded-full bg-sokol-red"></span>` : ''}
+                    </div>
+                    <div class="w-full overflow-hidden">${eventsBadgesHtml}</div>
+                `;
+
+                        dayCell.addEventListener('click', () => {
+                            selectedMonthDateStr = dateKey;
+                            renderMonthView();
+                        });
+
+                        calGrid.appendChild(dayCell);
+                    }
+
+                    const [selY, selM, selD] = selectedMonthDateStr.split('-').map(Number);
+                    const selDateObj = new Date(selY, selM - 1, selD);
+                    showDateDetail(selDateObj);
+                }
+
+                function showDateDetail(dateObj) {
+                    const day = dateObj.getDate();
+                    const month = dateObj.getMonth();
+                    const year = dateObj.getFullYear();
+                    detailDate.textContent = `Program na: ${day}. ${monthNames[month]} ${year}`;
+
+                    const events = getEventsForDate(dateObj);
+                    detailCount.textContent = events.length === 0 ? 'Volno' : `${events.length} ${events.length === 1 ? 'cvičení' : (events.length < 5 ? 'cvičení' : 'cvičení')}`;
+
+                    if (events.length === 0) {
+                        detailEvents.innerHTML = `
+                    <div class="p-4 rounded-2xl bg-white border border-slate-200 text-slate-600 text-sm font-medium">
+                        Volno
+                    </div>
+                `;
+                    } else {
+                        detailEvents.innerHTML = events.map(ev => {
+                            return `
+                        <div class="p-3.5 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-2xs">
+                            <div class="flex items-center gap-3">
+                                <span class="px-2.5 py-1 rounded-xl text-xs font-bold border bg-red-50 text-sokol-red border-red-100">${ev.time}</span>
+                                <div>
+                                    <strong class="text-slate-900 font-bold block">${ev.title}</strong>
+                                    <span class="text-xs text-slate-500">Místo: ${ev.place}</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-slate-500 font-medium">Sokolovna Malhostovice</span>
+                        </div>
+                    `;
+                        }).join('');
+                    }
+                }
+
+                calPrevBtn?.addEventListener('click', () => {
+                    if (currentMode === 'week') {
+                        currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+                        renderWeekView();
+                    } else {
+                        currentMonth--;
+                        if (currentMonth < 0) {
+                            currentMonth = 11;
+                            currentYear--;
+                        }
+                        renderMonthView();
+                    }
+                });
+
+                calNextBtn?.addEventListener('click', () => {
+                    if (currentMode === 'week') {
+                        currentWeekStart.setDate(currentWeekStart.getDate() + 7);
+                        renderWeekView();
+                    } else {
+                        currentMonth++;
+                        if (currentMonth > 11) {
+                            currentMonth = 0;
+                            currentYear++;
+                        }
+                        renderMonthView();
+                    }
+                });
+
+                calTodayBtn?.addEventListener('click', () => {
+                    const today = new Date();
+                    currentWeekStart = getMonday(today);
+                    currentYear = today.getFullYear();
+                    currentMonth = today.getMonth();
+                    selectedMonthDateStr = `${currentYear}-${formatTwoDigits(currentMonth + 1)}-${formatTwoDigits(today.getDate())}`;
+                    if (currentMode === 'week') {
+                        renderWeekView();
+                    } else {
+                        renderMonthView();
+                    }
+                });
+
+                setMode('week');
+            })();
+    </script>
+</body>
+
+</html>
